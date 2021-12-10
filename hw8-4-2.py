@@ -1,15 +1,18 @@
+# Yongdong Xi
 from random import randint
-
 
 def rock_paper_scissors():
     win = 0
     lose = 0
     tie = 0
+    total = 0
     """Play rock paper scissors""" 
     computer = randint(0, 2) 
     while True: 
         player = input("Enter 0 for rock, 1 for paper, and 2 for scissors: ")
-       
+        if int(player) <= 2:
+            total += 1
+            print(total)
         if int(player) > 2:
             continue
         if player == computer:
@@ -41,7 +44,7 @@ def rock_paper_scissors():
         if anotherplay == "Y":
             continue
         if anotherplay == 'N':
-            print('You win {0} games, lose {1} games and tie {2} games.'.format(win, lose, tie))
+            print('You play {3} games totally, win {0} games, lose {1} games and tie {2} games.'.format(win, lose, tie, total))
             break
         
 
